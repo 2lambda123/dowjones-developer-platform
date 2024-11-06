@@ -76,7 +76,7 @@ def req_api_article_audiofilename(articleid):
     news_storage.upload_audio_file(local_path, gen_filename)
 
     temp_item['filename'] = gen_filename
-    return json.dumps(temp_item)
+    return (json.dumps(temp_item), {'Content-Type': 'application/json'})
 
 
 if __name__ == '__main__':
